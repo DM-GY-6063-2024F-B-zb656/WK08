@@ -19,13 +19,18 @@ function setup() {
     let blueVal = mImg.pixels[idx + 2];
     let alphaVal = mImg.pixels[idx + 3];
 
-    let pixelIsRed = redVal > 2 * greenVal && redVal > 2 * blueVal && redVal > 20;
+    let pixelIsRed = redVal > 2 * greenVal && redVal > 2 * blueVal && redVal > 128;
 
-    if (!pixelIsRed) {
-      mImg.pixels[idx + 0] = 0;
-      mImg.pixels[idx + 1] = 0;
-      mImg.pixels[idx + 2] = 0;
-    }
+    // if (!pixelIsRed) {
+    //   let lVal = (redVal + greenVal + blueVal) / 3;
+    //   mImg.pixels[idx + 0] = blueVal;
+    //   mImg.pixels[idx + 1] = redVal;
+    //   mImg.pixels[idx + 2] = greenVal;
+    // }
+
+    mImg.pixels[idx + 0] = blueVal;
+      mImg.pixels[idx + 1] = redVal;
+      mImg.pixels[idx + 2] = greenVal;
   }
   mImg.updatePixels();
 
