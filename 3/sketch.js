@@ -10,10 +10,10 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(220);
+  background(0,0); // this means the bkg is transparent
 
   mImg.resize(600, 0);
-  mMask.resize(600, 0);
+  mMask.resize(600, 0); //seems like you cant actually resize the mask
 
   mImg.mask(mMask);
 
@@ -21,3 +21,7 @@ function setup() {
 }
 
 function draw() {}
+
+function mousePressed() {
+  save("star_mask.png");
+}
