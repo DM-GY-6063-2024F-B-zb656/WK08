@@ -23,5 +23,12 @@ function setup() {
 function draw() {
   image(video, 0, 0);
 
-  print(faces);
+  if (faces.length > 0) {
+    let keypoints = faces[0].keypoints;
+    noStroke();
+    fill(200,0,0);
+    for (let idx = 0; idx < keypoints.length; idx++) {
+      ellipse(keypoints[idx].x, keypoints[idx].y, 2);
+    }
+  }
 }
